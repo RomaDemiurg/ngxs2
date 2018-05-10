@@ -34,6 +34,17 @@ export class TodoState {
     setState([...getState(), payload]);
   }
 
+  /* @Action(AddPanda)
+  addPanda({ getState, setState }: StateContext<string[]>, { payload }: AddPanda) {
+    return this.pandaService.add(payload).pipe(
+        tap(panda => {
+            this.store.dispatch(new AddPandaSuccess(panda)).subscribe((res) => {
+                setState({...res});
+            });
+        })
+    );
+  } */
+
   @Action(RemoveTodo)
   removeTodo({ getState, setState }: StateContext<string[]>, { payload }: RemoveTodo) {
     setState(getState().filter((_, i) => i !== payload));
